@@ -198,7 +198,7 @@ class GitLab:
         if response.status_code == 200 and len(response.text) > 0:
             path = self.__createOutputDir(project.get("path_with_namespace"))
 
-            f = open(f"{path}/secrets.txt", "w")
+            f = open(f"{path}/secrets.txt", "a")
 
             nodes = response.json().get("data", {}).get("project", {}).get("inheritedCiVariables", {}).get("nodes", [])
             for variable in nodes:
