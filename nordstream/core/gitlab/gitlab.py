@@ -86,7 +86,7 @@ class GitLabRunner:
 
     @sleepTime.setter
     def sleepTime(self, value):
-        self._sleepTime = value
+        self._sleepTime = int(value)
 
     @property
     def localPath(self):
