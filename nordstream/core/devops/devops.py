@@ -676,7 +676,6 @@ class DevOpsRunner:
     def __createPipeline(self, projectId, repoId):
         logger.info("Getting pipeline")
         self.__pushEmptyFile()
-        self._pushedCommitsCounts += 1
 
         for pipeline in self._cicd.listPipelines(projectId):
             if pipeline.get("name") == self._cicd.pipelineName:
